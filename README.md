@@ -49,3 +49,8 @@ UPDATE students SET name = 'Andy' WHERE name = 'Dan';
 
 DELETE FROM students where name = 'Andy';
 
+
+within 'ul#links' do
+  expect(page).to have_content('Makers Academy')
+end
+
