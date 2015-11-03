@@ -1,12 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'data_mapper'
+gem 'dm-postgres-adapter'
+gem 'rspec'
+gem 'capybara'
+gem 'database_cleaner'
 
-group :test do
-  gem 'data_mapper'
-  gem 'dm-postgres-adapter'
-  gem 'rspec'
-  gem 'capybara'
-  gem 'database_cleaner'
-end
 
