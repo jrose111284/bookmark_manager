@@ -6,8 +6,6 @@ require 'database_cleaner'
 
 Capybara.app = BookmarkManager
 
-
-
 RSpec.configure do |config|
   # Everything in this block runs once before all the tests run
   config.before(:suite) do
