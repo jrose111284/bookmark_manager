@@ -1,7 +1,4 @@
 require 'spec_helper'
-require 'database_cleaner'
-
-
 
 feature 'list of links' do
 
