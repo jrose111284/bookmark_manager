@@ -18,6 +18,6 @@ enable :sessions
     erb(:'links/new')
   end
 
-run! if file = $0
+  run! if app_file == $0
 
 end

@@ -1,6 +1,10 @@
 require 'spec_helper'
+require 'database_cleaner'
+
+
 
 feature 'list of links' do
+
   scenario 'shows a list of links on the homepage' do
   	Link.create(url: 'https//www.makersacademy.com', title: 'Makers Academy')
   	visit('/links')
