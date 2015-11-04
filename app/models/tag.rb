@@ -3,11 +3,6 @@ require_relative '../data_mapper_setup'
 class Tag
   include DataMapper::Resource
     property :id, Serial
-    property :tags, String
+    property :name, String
+    has n, :links, through: Resource
 end
-
-#
-
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{ENV['RACK_ENV']}")
-DataMapper.finalize
-DataMapper.auto_upgrade!

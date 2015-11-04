@@ -13,7 +13,7 @@ enable :sessions
 
   post '/links' do
     link = Link.create(title: params[:title], url: params[:url])
-    tag = Tag.create(tags: params[:tags])
+    tag = Tag.create(name: params[:name])
     link.tags << tag
     link.save
     redirect '/links'
@@ -21,6 +21,12 @@ enable :sessions
 
   get '/links/new' do
     erb(:'links/new')
+  end
+
+  get '/tags/:name' do
+    tag = Tag.first(name: params[:name])
+    @links = tag ? tag.links : []
+    erb :'links/index'
   end
 
   run! if app_file == $0

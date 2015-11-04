@@ -6,9 +6,9 @@ feature 'creating links' do
     visit('/links/new')
     fill_in(:title, with: 'Makers Academy')
     fill_in(:url, with: 'https://www.makersacademy.com')
-    fill_in(:tags, with: 'cool')
+    fill_in(:name, with: 'cool')
     click_button('Submit')
     link = Link.first
-    expect(link.tags.map(&:tags)).to include('cool')
+    expect(link.tags.map(&:name)).to include('cool')
   end
 end
