@@ -13,9 +13,12 @@ enable :sessions
 
   post '/links' do
     link = Link.create(title: params[:title], url: params[:url])
-    tag = Tag.create(name: params[:name])
-    link.tags << tag
-    link.save
+    values = params[:name].split(" ")
+    values.each do |value|
+      tag = Tag.create(name: value)
+      link.tags << tag
+      link.save
+    end
     redirect '/links'
   end
 
