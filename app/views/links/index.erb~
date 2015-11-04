@@ -3,7 +3,6 @@
 		<li>
 			Title: <%= link.title %>
 			URL: <%= link.url %>
-      Tag: <%= link.tags %>
 		</li>
 	<% end %>
 </ul>
