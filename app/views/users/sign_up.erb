@@ -1,7 +1,15 @@
-<form action='/welcome' method='post'>
-  <label for='email'>email</label>
-    <input type='text' name='email'>
-  <label for='url'>password</label>
-    <input type='text' name='password'>
-  <input type='submit' value='Submit'>
+<form action='/users' method='post'>
+  <label for='email'>
+    Email: <input name='email' type='text' >
+  </label>
+
+  <label for='password'>
+    Password: <input name='password' type='password' >
+  </label>
+
+  <label for='password_confirmation'>
+  Password: <input name='password_confirmation' type='password' >
+  </label>
+
+  <input type='submit' value='Sign up'>
 </form>

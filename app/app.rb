@@ -22,6 +22,10 @@ class BookmarkManager < Sinatra::Base
     redirect '/links'
   end
 
+  get '/' do
+    redirect '/sign_up'
+  end
+
   get '/links/new' do
     erb(:'links/new')
   end
@@ -36,10 +40,12 @@ class BookmarkManager < Sinatra::Base
     erb(:'users/sign_up')
   end
 
-  post '/welcome' do
-    user = User.create(email: params[:email], password: params[:password])
+  post '/users' do
+    user = User.create(email: params[:email],
+                        password: params[:password],
+                        password_confirmation: params[:password_confirmation])
     session[:user_id] = user.id
-    redirect 'links'
+    redirect '/links'
   end
 
   helpers do
@@ -49,9 +55,5 @@ class BookmarkManager < Sinatra::Base
   end
 
   run! if app_file == $0
-
-
-
-
 end
 

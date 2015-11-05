@@ -1,9 +1,0 @@
-<form action='/links' method='post'>
-  <label for='title'>Website Title</label>
-    <input type='text' name='title'>
-  <label for='url'>Website URL</label>
-    <input type='text' name='url'>
-  <label for='tags'>Tag</label>
-    <input type='text' name='tags'>
-  <input type='submit' value='Submit'>
-</form>
