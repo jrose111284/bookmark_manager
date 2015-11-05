@@ -30,6 +30,15 @@ enable :sessions
     erb :'links/index'
   end
 
+  get '/sign_up' do
+    erb(:'users/sign_up')
+  end
+
+  post '/welcome' do
+    User.create(email: params[:email], password: params[:password])
+    redirect '/links'
+  end
+
   run! if app_file == $0
 
 end
