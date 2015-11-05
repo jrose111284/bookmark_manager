@@ -11,7 +11,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    coderay (1.1.0)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -67,16 +66,11 @@ GEM
     highline (1.7.8)
     json (1.8.3)
     json_pure (1.8.3)
-    method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
     multi_json (1.11.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    pry (0.10.2)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -102,7 +96,6 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
-    slop (3.6.0)
     stringex (1.5.1)
     templater (1.0.0)
       diff-lcs (>= 1.1.2)
@@ -117,12 +110,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
   capybara
   data_mapper
   database_cleaner
   dm-postgres-adapter
-  pry
   rake
   rspec
   rspec-sinatra

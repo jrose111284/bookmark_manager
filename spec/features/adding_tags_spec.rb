@@ -12,16 +12,14 @@ feature 'creating links with tags' do
     expect(link.tags.map(&:name)).to include('cool')
   end
 
-  scenario 'allows you to create a link and add multiple tags' do
-    visit('/links/new')
-    fill_in(:title, with: 'Makers Academy')
-    fill_in(:url, with: 'https://www.makersacademy.com')
-    fill_in(:name, with: 'this is very cool')
-    click_button('Submit')
-    link = Link.first
-    expect(link.tags.map(&:name)).to include('this')
-    expect(link.tags.map(&:name)).to include('is')
-    expect(link.tags.map(&:name)).to include('very')
-    expect(link.tags.map(&:name)).to include('cool')
-  end
+  scenario 'I can add multiple tags to a new link' do
+	  visit '/links/new'
+	  fill_in 'url',   with: 'http://www.makersacademy.com/'
+	  fill_in 'title', with: 'Makers Academy'
+	  # our tags will be space separated
+	  fill_in 'name',  with: 'education ruby'
+	  click_button 'Submit'
+	  link = Link.first
+	  expect(link.tags.map(&:name)).to include('education', 'ruby')
+	end
 end
