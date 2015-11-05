@@ -2,9 +2,11 @@ ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require './app/data_mapper_setup'
+require 'bcrypt'
 
 class BookmarkManager < Sinatra::Base
-enable :sessions
+  enable :sessions
+  set :session_secret, 'super secret'
 
 	get '/links' do
 		@links=Link.all
@@ -35,10 +37,21 @@ enable :sessions
   end
 
   post '/welcome' do
-    User.create(email: params[:email], password: params[:password])
-    redirect '/links'
+    user = User.create(email: params[:email], password: params[:password])
+    session[:user_id] = user.id
+    redirect 'links'
+  end
+
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
   end
 
   run! if app_file == $0
 
+
+
+
 end
+

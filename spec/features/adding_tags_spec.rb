@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'creating links with tags' do
 
-  scenario 'allows you to create a link and add a single tag' do
+  scenario 'allows you to create a link and add a new link' do
     visit('/links/new')
     fill_in(:title, with: 'Makers Academy')
     fill_in(:url, with: 'https://www.makersacademy.com')
