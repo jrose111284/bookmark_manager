@@ -4,7 +4,7 @@ require 'capybara/rspec'
 require './app/app'
 require 'database_cleaner'
 require 'web_helpers'
-require_relative 'helpers/session'
+require 'helpers/session'
 
 RSpec.configure do |config|
 

@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'web_helpers'
+
 
 feature 'User sign up with matching password' do
   scenario 'I can sign up as a new user' do
@@ -32,8 +32,8 @@ feature 'User sign up with matching password' do
   end
 
   scenario 'I cannot sign up with an existing email' do
-  sign_up
-  expect { sign_up }.to_not change(User, :count)
-  expect(page).to have_content('Email is already taken')
-end
+    sign_up
+    expect { sign_up }.to_not change(User, :count)
+    expect(page).to have_content('Email is already taken')
+  end
 end
