@@ -6,6 +6,7 @@ require 'bcrypt'
 require 'sinatra/flash'
 
 class BookmarkManager < Sinatra::Base
+  use Rack::MethodOverride
   enable :sessions
   set :session_secret, 'super secret'
   register Sinatra::Flash
@@ -58,6 +59,12 @@ class BookmarkManager < Sinatra::Base
   get '/sessions/new' do
     erb :'sessions/new'
   end
+  
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = 'goodbye!'
+    redirect to '/links'
+end
 
   post '/sessions' do
     user = User.authenticate(params[:email], params[:password])

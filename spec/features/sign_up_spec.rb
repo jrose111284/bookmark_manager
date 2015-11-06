@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'web_helpers'
 
 feature 'User sign up with matching password' do
   scenario 'I can sign up as a new user' do
