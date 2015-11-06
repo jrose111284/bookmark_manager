@@ -19,3 +19,4 @@ feature  'Filtering links' do
 		end
 	end
 end
+

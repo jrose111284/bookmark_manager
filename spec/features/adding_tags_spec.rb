@@ -23,3 +23,4 @@ feature 'creating links with tags' do
 	  expect(link.tags.map(&:name)).to include('education', 'ruby')
 	end
 end
+
